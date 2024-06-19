@@ -1,0 +1,250 @@
+/* Existing CSS styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #242b39; /* Set background color for the entire page */
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 96%; /* Change height to 100% to cover the entire viewport */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children vertically */
+    position: relative; /* Position relative for child positioning */
+}
+
+.links {
+    text-align: right;
+    padding: 5px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 5%;
+    font-size: 20px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.content-section {
+    display: none;
+}
+
+/* Show the content section based on the hash fragment */
+.content-section:target {
+    display: block;
+}
+
+#welcome-container {
+    position: relative; /* Position relative for child positioning */
+}
+
+.welcome-content {
+   
+    text-align: left;
+    padding: 20px;
+    color: #ffc765;
+    background-image: url('girldoingcoding.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    flex-grow: 1; /* Allow this section to grow and occupy remaining space */
+    position: relative; /* Position relative for child positioning */
+}
+
+#msg {
+    margin-left: 3%;
+    margin-top: 13%;
+    opacity: 0.9; /* Adjust transparency as needed */
+    position: absolute; /* Position absolute to overlay on top of welcome-content */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#welcome-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent rectangle behind content */
+    z-index: -1; /* Ensure the rectangle is behind other content */
+    border-radius: 10px;
+}
+
+.welcome-content h4,
+.welcome-content h1,
+.welcome-content h3,
+.welcome-content p {
+    margin-left: 0;
+    margin-right: 10%;
+}
+.welcome-content h1{
+    color:white;
+}
+.icons {
+    font-size: 30px;
+    color:#dec0009f;
+}
+
+/* Styles for Skills Section */
+.skills-content:target {
+    display: block; /* Display skills content only when the skills link is targeted */
+    background-color:#ffc765;
+    height:100%
+}
+
+.skills-content {
+    display: none; /* Hide skills content by default */
+    padding: 20px;
+    color: black;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 3%;
+    
+}
+
+.skills-text {
+    text-align: left;
+    margin-left: 3%;
+}
+
+.skills-text h1 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-align: center;
+    font-size: xx-large;
+    font-style:oblique;
+}
+
+.skills-text ul {
+    margin-top: 3%;
+    margin-left: 5%;
+    padding:2%;
+    font-style: italic;
+    font-size:xx-large;
+
+}
+.skills-text li{
+    padding:1%;
+} 
+.skills-image{
+    display:flex;
+    float: right;
+    margin-top:9%;
+    margin-right:5%;
+    border-radius: 2%;
+    width:40%;
+    height:57%;
+}
+.projects-content {
+    padding: 15px;
+    color: black;
+   
+    margin-left: 3%;
+    margin-right: 3%;
+    
+  }
+  
+  .project {
+    display: flex;
+   padding:2%;
+    background-color: #5df;
+    height: 40%;
+  }
+  
+  .project-image {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .project-image img {
+    width: 80%;
+    height: 80%;
+    border-radius: 12px;
+  }
+  
+  .project-description {
+    flex: 2;
+  }
+  
+  .project-description h2 {
+    font-style: italic;
+  }
+  
+  .project-description p {
+    text-align: justify;
+  }
+  /* Experience content */
+.experience-content {
+    display:none;
+    padding: 20px;
+    color: black;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    max-height: 80%; /* Set maximum height */
+    width: 90%;
+    background-color: #46ffc8f9;
+    overflow-y: scroll; /* Show vertical scrollbar */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.experience-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+.experience-content h1 {
+    margin-bottom: 5px;
+    margin-top: 1px;
+    text-align: center; /* Align h1 to center */
+    font-size: 2em; /* Set font size */
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.experience-content h3 {
+    text-align: justify; /* Justify text */
+    line-height: 1.6; /* Set line height for better readability */
+    padding:5px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.experience-content p {
+    margin-top: 10px; /* Add some space above paragraphs */
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust margins for even smaller screens */
+    .welcome-content,
+    .skills-content,
+    .projects-content,
+    .experience-content {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    /* Adjust width of skills image for even smaller screens */
+    .skills-image {
+        width: 100%;
+    }
+
+    /* Adjust font size for even smaller screens */
+    .skills-text h1,
+    .skills-text ul {
+        font-size: medium;
+    }
+}
